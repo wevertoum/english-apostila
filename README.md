@@ -34,22 +34,22 @@ Prioridade: **lógica → padrão → exemplos → repetição → automatizaç�
 | 4. Past Simple | [apostila/cap4.md](apostila/cap4.md) | pronto |
 | 5. Future | [apostila/cap5.md](apostila/cap5.md) | pronto |
 | 6. To Be | [apostila/cap6.md](apostila/cap6.md) | pronto |
-| 7. Can, could e modais | `apostila/cap7.md` | próximo |
-| 8. Have | `apostila/cap8.md` | pendente |
-| 9. Os 60 verbos mais importantes | `apostila/cap9.md` | pendente |
-| 10. Transformação de frases | `apostila/cap10.md` | pendente |
-| 11. Português → inglês | `apostila/cap11.md` | pendente |
-| 12. Inglês → português | `apostila/cap12.md` | pendente |
-| 13. Erros comuns de brasileiros | `apostila/cap13.md` | pendente |
-| 14. Contrações e inglês real | `apostila/cap14.md` | pendente |
-| 15. Respostas curtas | `apostila/cap15.md` | pendente |
-| 16. WH questions | `apostila/cap16.md` | pendente |
-| 17. Treino de automatização | `apostila/cap17.md` | pendente |
-| 18. Speaking drills | `apostila/cap18.md` | pendente |
-| 19. Frases do dia a dia | `apostila/cap19.md` | pendente |
-| 20. Resumo visual | `apostila/cap20.md` | pendente |
-| Extra. 100 frases essenciais | `apostila/frases-essenciais.md` | pendente |
-| Extra. Desafio final + gabarito | `apostila/desafio-final.md` | pendente |
+| 7. Can, could e modais | [apostila/cap7.md](apostila/cap7.md) | pronto |
+| 8. Have | [apostila/cap8.md](apostila/cap8.md) | pronto |
+| 9. Os 60 verbos mais importantes | [apostila/cap9.md](apostila/cap9.md) | pronto |
+| 10. Transformação de frases | [apostila/cap10.md](apostila/cap10.md) | pronto |
+| 11. Português → inglês | [apostila/cap11.md](apostila/cap11.md) | pronto |
+| 12. Inglês → português | [apostila/cap12.md](apostila/cap12.md) | pronto |
+| 13. Erros comuns de brasileiros | [apostila/cap13.md](apostila/cap13.md) | pronto |
+| 14. Contrações e inglês real | [apostila/cap14.md](apostila/cap14.md) | pronto |
+| 15. Respostas curtas | [apostila/cap15.md](apostila/cap15.md) | pronto |
+| 16. WH questions | [apostila/cap16.md](apostila/cap16.md) | pronto |
+| 17. Treino de automatização | [apostila/cap17.md](apostila/cap17.md) | pronto |
+| 18. Speaking drills | [apostila/cap18.md](apostila/cap18.md) | pronto |
+| 19. Frases do dia a dia | [apostila/cap19.md](apostila/cap19.md) | pronto |
+| 20. Resumo visual | [apostila/cap20.md](apostila/cap20.md) | pronto |
+| Extra. 100 frases essenciais | [apostila/frases-essenciais.md](apostila/frases-essenciais.md) | pronto |
+| Extra. Desafio final + gabarito | [apostila/desafio-final.md](apostila/desafio-final.md) | pronto |
 
 ---
 
