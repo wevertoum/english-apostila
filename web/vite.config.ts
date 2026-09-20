@@ -21,10 +21,10 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['favicon.svg', 'icons/icon-192.png', 'icons/icon-512.png'],
+      includeAssets: ['favicon.svg', 'og.png', 'icons/icon-192.png', 'icons/icon-512.png'],
       manifest: {
-        name: 'Apostila de inglês',
-        short_name: 'Inglês',
+        name: 'Easy English 3×3',
+        short_name: 'Easy English',
         description: 'Afirmar, negar, perguntar. Presente, passado, futuro.',
         lang: 'pt-BR',
         theme_color: '#1f4d3a',

@@ -50,7 +50,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <header className="top">
         <div className="top-inner">
           <Link to="/" className="brand">
-            Apostila
+            Easy English 3×3
           </Link>
           <nav>
             <Link to="/treino">Treino</Link>

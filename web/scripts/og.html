@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      * { box-sizing: border-box; margin: 0; }
+      html, body { width: 1200px; height: 630px; }
+      body {
+        display: flex;
+        align-items: center;
+        gap: 72px;
+        padding: 0 88px;
+        background:
+          radial-gradient(circle at 88% 12%, rgba(31, 77, 58, 0.14), transparent 26rem),
+          #f3efe6;
+        font-family: "Avenir Next", "Segoe UI", sans-serif;
+        color: #1c1917;
+      }
+      .text { flex: 1; }
+      h1 {
+        font-family: Palatino, "Palatino Linotype", Georgia, serif;
+        font-size: 88px;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+      .rule {
+        width: 96px;
+        height: 6px;
+        background: #1f4d3a;
+        margin: 34px 0 30px;
+      }
+      .line {
+        font-size: 31px;
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #1f4d3a;
+      }
+      .line + .line { margin-top: 12px; }
+      .foot {
+        margin-top: 40px;
+        font-size: 26px;
+        color: #57534e;
+      }
+      .mark { width: 300px; height: 300px; flex: none; }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <h1>Easy English 3&times;3</h1>
+      <div class="rule"></div>
+      <div class="line">Afirmar &middot; Negar &middot; Perguntar</div>
+      <div class="line">Present &middot; Past &middot; Future</div>
+      <p class="foot">Sem traduzir palavra por palavra.</p>
+    </div>
+    <svg class="mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <rect width="512" height="512" rx="112" fill="#1f4d3a"/>
+      <g fill="none" stroke="#f3efe6" stroke-width="10" opacity="0.5">
+        <rect x="101" y="101" width="96" height="96" rx="12"/>
+        <rect x="213" y="101" width="96" height="96" rx="12"/>
+        <rect x="325" y="101" width="96" height="96" rx="12"/>
+        <rect x="101" y="213" width="96" height="96" rx="12"/>
+        <rect x="213" y="213" width="96" height="96" rx="12"/>
+        <rect x="325" y="213" width="96" height="96" rx="12"/>
+        <rect x="101" y="325" width="96" height="96" rx="12"/>
+        <rect x="213" y="325" width="96" height="96" rx="12"/>
+        <rect x="325" y="325" width="96" height="96" rx="12"/>
+      </g>
+      <g fill="#f3efe6">
+        <rect x="101" y="101" width="96" height="96" rx="12"/>
+        <rect x="213" y="213" width="96" height="96" rx="12"/>
+        <rect x="325" y="325" width="96" height="96" rx="12"/>
+      </g>
+    </svg>
+  </body>
+</html>

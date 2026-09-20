@@ -21,7 +21,7 @@ export function Home() {
     chapters[0]
 
   useEffect(() => {
-    document.title = 'Apostila de inglês'
+    document.title = 'Easy English 3×3'
     const onPrompt = (event: Event) => {
       event.preventDefault()
       setInstall(event as InstallPrompt)
@@ -33,10 +33,11 @@ export function Home() {
   return (
     <Layout>
       <p className="kicker">Afirmar → negar → perguntar</p>
-      <h1>Apostila de inglês</h1>
+      <h1>Easy English 3×3</h1>
       <p className="lede">
-        A frase se monta por intenção e tempo. O auxiliar carrega a informação. O verbo principal, quase
-        sempre, fica na forma base.
+        Três intenções vezes três tempos: nove frases para qualquer verbo. Esse é o 3×3. A frase se monta
+        por intenção e tempo, o auxiliar carrega a informação e o verbo principal, quase sempre, fica na
+        forma base.
       </p>
 
       <section className="panel">
@@ -69,8 +70,29 @@ export function Home() {
       </section>
 
       <section>
-        <h2>Mapa 3×3</h2>
-        <p className="muted">Verbo-modelo: need. Quando entra o auxiliar, need não muda.</p>
+        <h2>O que é o 3×3</h2>
+        <aside className="guide">
+          <p className="guide-label">A grade</p>
+          <p>
+            <strong>3 intenções</strong> — afirmar, negar, perguntar
+          </p>
+          <p>
+            <strong>3 tempos</strong> — presente, passado, futuro
+          </p>
+          <p className="mold">3 × 3 = nove frases por verbo</p>
+        </aside>
+        <p>
+          Cruzar as duas listas dá nove caixas, e todo verbo do inglês cabe nessas nove. O que muda de uma
+          caixa para a outra é o auxiliar — do, does, did, will —, não o verbo. Por isso você aprende a
+          grade uma vez e cada verbo novo já chega com nove frases prontas, em vez de decorar frase por
+          frase.
+        </p>
+        <p>
+          Abaixo, a grade preenchida com <strong>need</strong>. Em oito das nove caixas o verbo fica na
+          forma base; só o afirmativo no passado muda para <strong>needed</strong>, porque ali não existe
+          auxiliar para carregar o tempo. O <Link to="/treino">treino 3×3</Link> sorteia uma dessas caixas
+          e pede a frase.
+        </p>
         <div className="table-wrap">
           <table className="map">
             <thead>

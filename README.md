@@ -1,4 +1,4 @@
-# Apostila de inglês
+# Easy English 3×3
 
 App para falantes de português brasileiro treinarem a lógica da frase, não uma lista de regras.
 
@@ -91,3 +91,10 @@ npm run dev
 ```
 
 Abre em `http://localhost:5173/english-apostila/`. Push em `main` publica o app pelo GitHub Actions.
+
+A imagem de preview dos links (`web/public/og.png`) é gerada de `web/scripts/og.html`:
+
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless \
+  --window-size=1200,630 --screenshot=web/public/og.png web/scripts/og.html
+```

@@ -13,10 +13,10 @@ export function ChapterPage() {
 
   useEffect(() => {
     if (!chapter) {
-      document.title = 'Apostila de inglês'
+      document.title = 'Easy English 3×3'
       return
     }
-    document.title = `${chapter.title} — Apostila`
+    document.title = `${chapter.title} — Easy English 3×3`
     openChapter(chapter.id)
   }, [chapter])
 
