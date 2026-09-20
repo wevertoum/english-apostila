@@ -1,6 +1,13 @@
 import { useState, type FormEvent } from 'react'
 import { Layout } from '../components/Markdown'
-import { checkAnswer, intentLabel, randomPrompt, tenseLabel, type Prompt } from '../lib/practice'
+import {
+  checkAnswer,
+  guideFor,
+  intentLabel,
+  randomPrompt,
+  tenseLabel,
+  type Prompt,
+} from '../lib/practice'
 import { recordPractice, resetPractice } from '../lib/progress'
 import { useProgress } from '../lib/useProgress'
 
@@ -24,12 +31,15 @@ export function Practice() {
     setResult(null)
   }
 
+  const guide = guideFor(prompt)
+
   return (
     <Layout>
       <p className="kicker">Máquina</p>
       <h1>Treino 3×3</h1>
       <p className="lede">
-        Sujeito, tempo, intenção. Com auxiliar, o verbo fica na base. I'll e I will contam igual.
+        Cada cartão pede uma frase completa. O exemplo usa outro verbo. Você mantém sujeito, tempo e
+        intenção, e troca o verbo.
       </p>
       <p className="score">
         {progress.practice.correct} certos em {progress.practice.attempted}
@@ -54,8 +64,9 @@ export function Practice() {
             <dd>{intentLabel(prompt.intent)}</dd>
           </div>
         </dl>
+        <Guide guide={guide} verb={prompt.verb} />
         <label className="field">
-          Escreva a frase
+          Sua frase, com {prompt.verb}
           <input
             value={value}
             onChange={(event) => setValue(event.target.value)}
@@ -64,6 +75,7 @@ export function Practice() {
             autoCorrect="off"
             spellCheck={false}
             enterKeyHint="done"
+            placeholder={`ex.: ${guide.example}`}
           />
         </label>
         {result === null && (
@@ -79,7 +91,7 @@ export function Practice() {
             <p>Certo.</p>
           ) : (
             <p>
-              Ainda não. Uma forma: <strong>{prompt.pretty}</strong>
+              A frase esperada era <strong>{prompt.pretty}</strong>
             </p>
           )}
           <button type="button" className="button" onClick={next}>
@@ -101,5 +113,26 @@ export function Practice() {
         Zerar placar
       </button>
     </Layout>
+  )
+}
+
+function Guide({
+  guide,
+  verb,
+}: {
+  guide: ReturnType<typeof guideFor>
+  verb: string
+}) {
+  return (
+    <aside className="guide">
+      <p className="guide-label">Frase esperada</p>
+      <p>{guide.task} Escreva a frase inteira, não só o verbo.</p>
+      <p className="example">{guide.example}</p>
+      <p>
+        Esse exemplo usa <strong>{guide.modelVerb}</strong>. Faça a mesma frase trocando por{' '}
+        <strong>{verb}</strong>.
+      </p>
+      <p className="mold">{guide.mold}</p>
+    </aside>
   )
 }

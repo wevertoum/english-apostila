@@ -58,8 +58,8 @@ export function normalizeAnswer(input: string): string {
 }
 
 function build(subject: Subject, verb: string, past: string, intent: Intent, tense: Tense) {
-  const who = subject === 'I' ? 'I' : subject
-  const low = who.toLowerCase()
+  const who = subject === 'I' ? 'I' : subject[0].toUpperCase() + subject.slice(1)
+  const low = subject.toLowerCase()
   const base = verb
   let pretty = ''
   let expected = ''
@@ -116,6 +116,53 @@ export function randomPrompt(avoidId?: string): Prompt {
 
 export function checkAnswer(input: string, expected: string) {
   return normalizeAnswer(input) === expected
+}
+
+export type DrillGuide = {
+  task: string
+  mold: string
+  example: string
+  modelVerb: string
+}
+
+export function guideFor(prompt: Prompt): DrillGuide {
+  const modelVerb = prompt.verb === 'need' ? 'work' : 'need'
+  const modelPast = prompt.verb === 'need' ? 'worked' : 'needed'
+  const example = build(prompt.subject, modelVerb, modelPast, prompt.intent, prompt.tense).pretty
+  const who = prompt.subject === 'I' ? 'I' : prompt.subject[0].toUpperCase() + prompt.subject.slice(1)
+  const third = thirdPerson(prompt.subject)
+
+  let mold = ''
+  if (prompt.tense === 'presente' && prompt.intent === 'afirmar') {
+    mold = third ? `${who} + verbo com -s. Sem auxiliar.` : `${who} + verbo. Sem auxiliar e sem -s.`
+  } else if (prompt.tense === 'presente' && prompt.intent === 'negar') {
+    mold = third
+      ? `${who} + doesn't + verbo na base. O -s sai.`
+      : `${who} + don't + verbo na base.`
+  } else if (prompt.tense === 'presente' && prompt.intent === 'perguntar') {
+    mold = third ? `Does ${who.toLowerCase()} + verbo na base?` : `Do ${who.toLowerCase()} + verbo na base?`
+  } else if (prompt.tense === 'passado' && prompt.intent === 'afirmar') {
+    mold = `${who} + passado do verbo. Sem did.`
+  } else if (prompt.tense === 'passado' && prompt.intent === 'negar') {
+    mold = `${who} + didn't + verbo na base. O passado fica só no didn't.`
+  } else if (prompt.tense === 'passado' && prompt.intent === 'perguntar') {
+    mold = `Did ${who.toLowerCase()} + verbo na base?`
+  } else if (prompt.tense === 'futuro' && prompt.intent === 'afirmar') {
+    mold =
+      prompt.subject === 'I'
+        ? `${who} + will + verbo na base. I'll também vale.`
+        : `${who} + will + verbo na base.`
+  } else if (prompt.tense === 'futuro' && prompt.intent === 'negar') {
+    mold = `${who} + won't + verbo na base.`
+  } else {
+    mold = `Will ${who.toLowerCase()} + verbo na base?`
+  }
+
+  const action =
+    prompt.intent === 'afirmar' ? 'Afirme' : prompt.intent === 'negar' ? 'Negue' : 'Faça a pergunta'
+  const task = `${action} no ${prompt.tense}. Sujeito ${who}. Verbo ${prompt.verb}.`
+
+  return { task, mold, example, modelVerb }
 }
 
 export function intentLabel(intent: Intent) {
